@@ -1,0 +1,37 @@
+import type { MetadataRoute } from "next";
+
+/**
+ * Wires up the icons that were already sitting in public/assets/favicon but
+ * that nothing referenced — `site.webmanifest` shipped in the repo and was
+ * never linked.
+ */
+export default function manifest(): MetadataRoute.Manifest {
+    return {
+        name: "निर्मलाUPI — UPI Invoice Generator with Split Payment QR Codes",
+        short_name: "निर्मलाUPI",
+        description:
+            "Create invoices with UPI bill payment QR codes. Amounts over ₹1,999 are split into multiple QRs that add up to the full total.",
+        start_url: "/",
+        display: "standalone",
+        background_color: "#ffffff",
+        theme_color: "#f97316",
+        icons: [
+            {
+                src: "/assets/favicon/android-chrome-192x192.png",
+                sizes: "192x192",
+                type: "image/png",
+            },
+            {
+                src: "/assets/favicon/android-chrome-512x512.png",
+                sizes: "512x512",
+                type: "image/png",
+            },
+            {
+                src: "/assets/favicon/apple-touch-icon.png",
+                sizes: "180x180",
+                type: "image/png",
+                purpose: "maskable",
+            },
+        ],
+    };
+}

@@ -1,0 +1,82 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# testing
+/coverage
+*.lcov
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.pem
+
+# debug / logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# env files (keep .env.example if present)
+.env
+.env.*
+!.env.example
+!.env*.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+# next-env.d.ts is deliberately NOT ignored. It is generated, but it is what
+# declares *.svg and friends as modules, so `tsc --noEmit` cannot resolve the
+# navbar logo import without it. CI typechecks before it builds anything, so
+# ignoring it made the typecheck depend on a build artefact that is not there
+# yet. Committing it makes the typecheck self-sufficient on a fresh clone.
+#
+# lib/pdfStyles.generated.ts is also generated (predev/prebuild) and is
+# imported by the PDF service. CI runs `tsc --noEmit` before `prebuild`, so
+# it must be committed as well.
+
+# cache / turbo
+/.cache
+.turbo
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Local scratch
+/.scratch/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Claude Code local state
+/.claude/

@@ -1,8 +1,8 @@
 [![Discord](https://img.shields.io/badge/Discord-%40Invoify-000000?style=flat&logo=Discord&logoColor=#5865F2)](https://discord.gg/uhXKHbVKHZ)
 [![CI](https://github.com/al1abb/invoify/actions/workflows/ci.yml/badge.svg)](https://github.com/al1abb/invoify/actions/workflows/ci.yml)
-# nirmalaUPI (NirmalaInvoice / निर्मलाUPI)
+# निर्मलाInvoice
 
-nirmalaUPI is a free, UPI-powered invoice generator built with Next.js, TypeScript, React and the shadcn/ui library. Not just another invoice tool—nirmalaUPI creates invoices with scan-to-pay UPI QR codes. Bills over ₹1,999 are split into multiple payment QR codes that add up to the full total. Made specifically for Indian businesses.
+निर्मलाInvoice is a free, UPI-powered invoice generator built with Next.js, TypeScript, React and the shadcn/ui library. Not just another invoice tool—निर्मलाInvoice creates invoices with scan-to-pay UPI QR codes. Bills over ₹1,999 are split into multiple payment QR codes that add up to the full total. Made specifically for Indian businesses.
 
 ![Invoify Website image](https://github.com/user-attachments/assets/7b7076db-736e-4a82-b61b-cec3c0ff5695)
 
@@ -29,7 +29,7 @@ nirmalaUPI is a free, UPI-powered invoice generator built with Next.js, TypeScri
 
 ## Features
 
-### 🇮🇳 UPI bill-split QR codes (Unique to nirmalaUPI)
+### 🇮🇳 UPI bill-split QR codes (Unique to निर्मलाInvoice)
 - **Automatic split:** Amounts over ₹1,999 become the minimum number of UPI QRs, each at most ₹1,999
 - **Exact total:** QR amounts are split in paise so they always add up to the original invoice total
 - **Individual UPI QR codes:** Each part of the bill gets its own scannable UPI QR code

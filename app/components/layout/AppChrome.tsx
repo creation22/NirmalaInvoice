@@ -24,7 +24,7 @@ export default function AppChrome({ children }: { children: React.ReactNode }) {
                 data-cfasync="false"
                 data-id="aliabb"
                 data-description="Support me on Buy me a coffee!"
-                data-message="Thank you for using निर्मलाUPI"
+                data-message="Thank you for using निर्मलाInvoice"
                 data-color="#111111"
                 data-position="Right"
                 data-x_margin="18"

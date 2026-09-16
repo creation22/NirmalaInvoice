@@ -29,7 +29,7 @@ export async function generateMetadata(props: {
 
     const title = `${
         landing.guideH1 ?? landing.h1 ?? "How it works"
-    } — निर्मलाUPI`;
+    } — निर्मलाInvoice`;
     const description = meta.description ?? "";
 
     // hreflang for this page's own path, not the homepage's.
@@ -49,7 +49,7 @@ export async function generateMetadata(props: {
         alternates: { canonical: `/${locale}/guide`, languages },
         openGraph: {
             type: "article",
-            siteName: "निर्मलाUPI",
+            siteName: "निर्मलाInvoice",
             title,
             description,
             url: `/${locale}/guide`,

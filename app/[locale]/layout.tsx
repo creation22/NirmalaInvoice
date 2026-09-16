@@ -27,8 +27,9 @@ import {
     GOOGLE_SC_VERIFICATION,
     LOCALES,
 } from "@/lib/variables";
-// Vercel Analytics
+// Vercel Analytics + Speed Insights
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 // Next Intl
 import { NextIntlClientProvider } from "next-intl";
@@ -52,7 +53,7 @@ export async function generateMetadata(props: {
     const messages = await getMessages(locale);
     const meta = (messages as Record<string, Record<string, string>>)?.meta ?? {};
 
-    const title = meta.title ?? "निर्मलाUPI | UPI Invoice Generator with Split Payment QR Codes";
+    const title = meta.title ?? "निर्मलाInvoice | UPI Invoice Generator with Split Payment QR Codes";
     const description =
         meta.description ??
         "Create invoices with UPI bill payment QR codes. Amounts over ₹1,999 are split into multiple QRs that add up to the full total. Made for Indian businesses.";
@@ -70,7 +71,7 @@ export async function generateMetadata(props: {
         },
         openGraph: {
             type: "website",
-            siteName: "निर्मलाUPI",
+            siteName: "निर्मलाInvoice",
             title,
             description,
             url: localePath(locale),
@@ -151,6 +152,7 @@ export default async function LocaleLayout(props: {
                         <AppChrome>{children}</AppChrome>
                         <Toaster />
                         <Analytics />
+                        <SpeedInsights />
                     </Providers>
                 </NextIntlClientProvider>
             </body>

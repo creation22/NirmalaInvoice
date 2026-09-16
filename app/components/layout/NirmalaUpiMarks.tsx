@@ -5,20 +5,20 @@
 
 const WORDMARK_SIZE = {
     hero: {
-        hi: "text-[2.75rem] sm:text-[3.35rem] md:text-[3.85rem]",
-        upi: "text-[2.05rem] sm:text-[2.5rem] md:text-[2.9rem]",
+        hi: "text-[2.75rem] sm:text-[3.5rem] md:text-[4.15rem]",
+        invoice: "text-[2.05rem] sm:text-[2.6rem] md:text-[3.05rem]",
     },
     compact: {
         hi: "text-2xl sm:text-3xl",
-        upi: "text-xl sm:text-2xl",
+        invoice: "text-xl sm:text-2xl",
     },
     nav: {
         hi: "text-xl sm:text-2xl",
-        upi: "text-lg sm:text-xl",
+        invoice: "text-lg sm:text-xl",
     },
 } as const;
 
-/** Devanagari निर्मला + Latin UPI as one mark. */
+/** Devanagari निर्मला + Latin Invoice as one mark. */
 export function BrandWordmark({
     size = "nav",
     className,
@@ -31,15 +31,15 @@ export function BrandWordmark({
     return (
         <span
             className={`inline-flex items-baseline whitespace-nowrap leading-none ${className ?? ""}`}
-            aria-label="निर्मलाUPI"
+            aria-label="निर्मलाInvoice"
         >
             <span
                 className={`font-devanagari font-semibold tracking-tight ${scale.hi}`}
             >
                 निर्मला
             </span>
-            <span className={`font-semibold tracking-tight ${scale.upi}`}>
-                UPI
+            <span className={`font-semibold tracking-tight ${scale.invoice}`}>
+                Invoice
             </span>
         </span>
     );

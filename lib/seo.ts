@@ -48,7 +48,7 @@ export function buildJsonLd(locale: string) {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "@id": `${BASE_URL}/#app`,
-        name: "निर्मलाUPI",
+        name: "निर्मलाInvoice",
         url,
         applicationCategory: "BusinessApplication",
         operatingSystem: "Any",

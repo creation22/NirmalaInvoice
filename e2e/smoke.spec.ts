@@ -11,12 +11,16 @@ import { test, expect, type Page } from "@playwright/test";
 /**
  * Requests that legitimately fail outside a Vercel deployment.
  *
- * The analytics script is injected by @vercel/analytics and is only served by
- * Vercel's edge, so it 404s on any local or CI run. Allow-listing it by URL
- * keeps the assertion strict about everything else, rather than the easier and
- * much worse option of ignoring 404s in general.
+ * The analytics and Speed Insights scripts are injected by @vercel/analytics
+ * and @vercel/speed-insights and are only served by Vercel's edge, so they
+ * 404 on any local or CI run. Allow-listing them by URL keeps the assertion
+ * strict about everything else, rather than the easier and much worse option
+ * of ignoring 404s in general.
  */
-const EXPECTED_FAILING_REQUESTS = [/\/_vercel\/insights\//];
+const EXPECTED_FAILING_REQUESTS = [
+    /\/_vercel\/insights\//,
+    /\/_vercel\/speed-insights\//,
+];
 
 /**
  * Records console errors and failed requests.

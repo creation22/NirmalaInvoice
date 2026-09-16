@@ -1,7 +1,7 @@
 import type { AbstractIntlMessages } from "next-intl";
 
 import enMessages from "@/i18n/locales/en.json";
-import { DEFAULT_LOCALE } from "@/lib/variables";
+import { DEFAULT_LOCALE } from "./locale-config";
 
 /**
  * Deep-merges `override` onto `base`, returning a new object.

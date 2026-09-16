@@ -123,7 +123,7 @@ const useToasts = () => {
         toast({
             variant: "destructive",
             title: "Error",
-            description: "Something went importing the invoice. Make sure the file is a valid निर्मलाUPI JSON export",
+            description: "Something went importing the invoice. Make sure the file is a valid निर्मलाInvoice JSON export",
         });
     };
 

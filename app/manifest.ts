@@ -7,8 +7,8 @@ import type { MetadataRoute } from "next";
  */
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "निर्मलाUPI — UPI Invoice Generator with Split Payment QR Codes",
-        short_name: "निर्मलाUPI",
+        name: "निर्मलाInvoice — UPI Invoice Generator with Split Payment QR Codes",
+        short_name: "निर्मलाInvoice",
         description:
             "Create invoices with UPI bill payment QR codes. Amounts over ₹1,999 are split into multiple QRs that add up to the full total.",
         start_url: "/",

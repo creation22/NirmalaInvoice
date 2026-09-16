@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { LandingDevelopedBy } from "@/app/components/layout/LandingDevelopedBy";
 import {
     BrandWordmark,
     FooterMarks,
@@ -50,6 +51,7 @@ export default function NirmalaUpiLanding() {
                         Indian businesses.
                     </p>
                     <FooterMarks />
+                    <LandingDevelopedBy />
                 </div>
             </footer>
         </main>

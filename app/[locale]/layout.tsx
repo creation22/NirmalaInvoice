@@ -22,6 +22,8 @@ import {
 } from "@/lib/seo";
 // Variables
 import {
+    AUTHOR_NAME,
+    AUTHOR_WEBSITE,
     BASE_URL,
     dirForLocale,
     GOOGLE_SC_VERIFICATION,
@@ -83,8 +85,8 @@ export async function generateMetadata(props: {
             description,
         },
         authors: {
-            name: "Ali Abbasov",
-            url: "https://aliabb.vercel.app",
+            name: AUTHOR_NAME,
+            url: AUTHOR_WEBSITE,
         },
         verification: {
             google: GOOGLE_SC_VERIFICATION,

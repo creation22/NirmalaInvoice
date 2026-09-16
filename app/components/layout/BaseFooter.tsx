@@ -6,7 +6,7 @@ import { useTranslationContext } from "@/contexts/TranslationContext";
 import { Link } from "@/i18n/navigation";
 
 // Variables
-import { AUTHOR_GITHUB } from "@/lib/variables";
+import { AUTHOR_GITHUB, AUTHOR_NAME } from "@/lib/variables";
 
 const BaseFooter = () => {
     const { _t } = useTranslationContext();
@@ -23,7 +23,7 @@ const BaseFooter = () => {
                         rel="noopener noreferrer"
                         className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
                     >
-                        Ali Abbasov
+                        {AUTHOR_NAME}
                     </a>
                 </p>
 

@@ -22,8 +22,8 @@ export const BASE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://invoify.vercel.app"
 ).replace(/\/$/, "");
 export const AUTHOR_NAME = "Srajan Gupta";
-export const AUTHOR_WEBSITE = "https://aliabb.vercel.app";
-export const AUTHOR_GITHUB = "https://github.com/al1abb";
+export const AUTHOR_WEBSITE = "https://x.com/_creation22";
+export const AUTHOR_SOCIAL = "https://x.com/_creation22";
 
 /**
  * API endpoints

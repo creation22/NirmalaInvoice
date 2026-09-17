@@ -6,7 +6,12 @@ import { useTranslationContext } from "@/contexts/TranslationContext";
 import { Link } from "@/i18n/navigation";
 
 // Variables
-import { AUTHOR_NAME, AUTHOR_SOCIAL, HIRE_ME_URL } from "@/lib/variables";
+import {
+    AUTHOR_NAME,
+    AUTHOR_SOCIAL,
+    BUY_ME_COFFEE_URL,
+    HIRE_ME_URL,
+} from "@/lib/variables";
 
 const BaseFooter = () => {
     const { _t } = useTranslationContext();
@@ -34,6 +39,14 @@ const BaseFooter = () => {
                         className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
                     >
                         {_t("footer.hireMe")}
+                    </a>
+                    <a
+                        href={BUY_ME_COFFEE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
+                    >
+                        {_t("footer.buyMeCoffee")}
                     </a>
                 </div>
 

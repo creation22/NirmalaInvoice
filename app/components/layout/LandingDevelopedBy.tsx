@@ -1,7 +1,12 @@
 "use client";
 
 import { useTranslationContext } from "@/contexts/TranslationContext";
-import { AUTHOR_NAME, AUTHOR_SOCIAL, HIRE_ME_URL } from "@/lib/variables";
+import {
+    AUTHOR_NAME,
+    AUTHOR_SOCIAL,
+    BUY_ME_COFFEE_URL,
+    HIRE_ME_URL,
+} from "@/lib/variables";
 
 export function LandingDevelopedBy() {
     const { _t } = useTranslationContext();
@@ -26,6 +31,14 @@ export function LandingDevelopedBy() {
                 className="font-medium text-[rgb(44_34_31_/_0.72)] underline underline-offset-4 transition-colors hover:text-neutral-950"
             >
                 {_t("footer.hireMe")}
+            </a>
+            <a
+                href={BUY_ME_COFFEE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[rgb(44_34_31_/_0.72)] underline underline-offset-4 transition-colors hover:text-neutral-950"
+            >
+                {_t("footer.buyMeCoffee")}
             </a>
         </div>
     );

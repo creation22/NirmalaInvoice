@@ -15,17 +15,27 @@ const BaseFooter = () => {
         // pb clears the sticky MobileActionBar, which only renders below xl
         <footer className="border-t border-border bg-white">
             <div className="container flex flex-col items-center justify-between gap-2 py-6 pb-28 text-sm text-muted-foreground sm:flex-row xl:pb-6">
-                <p>
-                    {_t("footer.developedBy")}{" "}
+                <div className="flex flex-col items-center gap-1 sm:items-start">
+                    <p>
+                        {_t("footer.developedBy")}{" "}
+                        <a
+                            href={AUTHOR_SOCIAL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
+                        >
+                            {AUTHOR_NAME}
+                        </a>
+                    </p>
                     <a
                         href={AUTHOR_SOCIAL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-medium text-foreground underline underline-offset-4 transition-colors hover:text-primary"
                     >
-                        {AUTHOR_NAME}
+                        {_t("footer.hireMe")}
                     </a>
-                </p>
+                </div>
 
                 <nav>
                     <Link

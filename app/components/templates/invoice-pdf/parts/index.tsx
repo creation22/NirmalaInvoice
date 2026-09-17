@@ -399,50 +399,67 @@ export function TotalsBlock({
 /**
  * Literal Tailwind class sets so the PDF CSS scan picks them up.
  * Dynamic `grid-cols-${n}` strings would be missing from the compiled sheet.
+ *
+ * Multiple QRs use flex-wrap (not a fixed grid) so they stay spaced when
+ * PaymentBlock sits in a narrow column — otherwise 148px images overflow
+ * adjacent grid tracks and look stacked on top of each other.
  */
 function upiQrLayout(count: number): {
     wrap: string;
+    item: string;
     img: string;
     size: number;
 } {
+    const imgBase = "block shrink-0 max-w-none";
+    const multiWrap =
+        "flex flex-wrap items-start justify-center gap-x-12 gap-y-10 px-5 py-6";
+    const multiItem =
+        "flex shrink-0 flex-col items-center gap-3 px-2 text-center";
+
     if (count <= 1) {
         return {
             wrap: "flex flex-row items-center gap-6 px-5 py-5",
-            img: "h-[168px] w-[168px]",
+            item: "flex items-center gap-6",
+            img: `h-[168px] w-[168px] ${imgBase}`,
             size: 168,
         };
     }
     if (count === 2) {
         return {
-            wrap: "grid grid-cols-2 gap-6 px-5 py-5",
-            img: "h-[148px] w-[148px]",
+            wrap: multiWrap,
+            item: multiItem,
+            img: `h-[148px] w-[148px] ${imgBase}`,
             size: 148,
         };
     }
     if (count === 3) {
         return {
-            wrap: "grid grid-cols-3 gap-5 px-4 py-5",
-            img: "h-[128px] w-[128px]",
+            wrap: multiWrap,
+            item: multiItem,
+            img: `h-[128px] w-[128px] ${imgBase}`,
             size: 128,
         };
     }
     if (count === 4) {
         return {
-            wrap: "grid grid-cols-2 gap-x-8 gap-y-6 px-5 py-5",
-            img: "h-[140px] w-[140px]",
-            size: 140,
+            wrap: multiWrap,
+            item: multiItem,
+            img: `h-[136px] w-[136px] ${imgBase}`,
+            size: 136,
         };
     }
     if (count <= 6) {
         return {
-            wrap: "grid grid-cols-3 gap-5 px-4 py-4",
-            img: "h-[120px] w-[120px]",
+            wrap: multiWrap,
+            item: multiItem,
+            img: `h-[120px] w-[120px] ${imgBase}`,
             size: 120,
         };
     }
     return {
-        wrap: "grid grid-cols-4 gap-4 px-4 py-4",
-        img: "h-[108px] w-[108px]",
+        wrap: multiWrap,
+        item: multiItem,
+        img: `h-[108px] w-[108px] ${imgBase}`,
         size: 108,
     };
 }
@@ -535,7 +552,7 @@ export function PaymentBlock({ ctx }: { ctx: PartCtx }) {
                                         return (
                                             <div
                                                 key={item.partNumber}
-                                                className="flex items-center gap-6"
+                                                className={layout.item}
                                             >
                                                 {qr}
                                                 <div>
@@ -554,10 +571,10 @@ export function PaymentBlock({ ctx }: { ctx: PartCtx }) {
                                     return (
                                         <div
                                             key={item.partNumber}
-                                            className="flex flex-col items-center text-center"
+                                            className={layout.item}
                                         >
                                             {qr}
-                                            <div className="mt-3">{label}</div>
+                                            {label}
                                         </div>
                                     );
                                 })}

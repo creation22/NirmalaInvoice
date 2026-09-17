@@ -742,9 +742,9 @@ test.describe("invoice builder", () => {
         expect(alternates.length).toBeGreaterThanOrEqual(18);
         expect(enHtml).toMatch(/hreflang="x-default"/i);
 
-        // Open Graph and Twitter, neither of which existed.
-        expect(enHtml).toMatch(/property="og:image"/i);
-        expect(enHtml).toMatch(/name="twitter:card"/i);
+        // Open Graph / Twitter text tags without a preview image.
+        expect(enHtml).not.toMatch(/property="og:image"/i);
+        expect(enHtml).toMatch(/name="twitter:card"[^>]*content="summary"/i);
 
         // Exactly one h1 — the invoice templates used to render their own
         // inside the live preview, out of the user's data.
@@ -804,8 +804,7 @@ test.describe("invoice builder", () => {
         expect(favicon.status()).toBe(200);
 
         const og = await request.get("/en/opengraph-image");
-        expect(og.status()).toBe(200);
-        expect(og.headers()["content-type"]).toContain("image/png");
+        expect(og.status()).toBe(404);
     });
 
     test("clients can be saved and reused", async ({ page }) => {

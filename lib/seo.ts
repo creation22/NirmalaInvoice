@@ -62,9 +62,6 @@ export function buildJsonLd(locale: string) {
             "Free invoice generator. Build an invoice from thirteen templates and download it as a PDF.",
         inLanguage: locale,
         keywords: ROOTKEYWORDS,
-        // Generated on demand by app/[locale]/opengraph-image.tsx, so it cannot
-        // go stale the way a hashed asset URL did.
-        image: `${BASE_URL}${localePath(locale)}/opengraph-image`,
         offers: {
             "@type": "Offer",
             price: "0",

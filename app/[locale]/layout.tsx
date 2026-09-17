@@ -61,7 +61,6 @@ export async function generateMetadata(props: {
         "Create invoices with UPI bill payment QR codes. Amounts over ₹1,999 are split into multiple QRs that add up to the full total. Made for Indian businesses.";
 
     return {
-        // Resolves every relative URL below, including the generated OG image.
         metadataBase: new URL(BASE_URL),
         title,
         description,
@@ -80,7 +79,7 @@ export async function generateMetadata(props: {
             locale,
         },
         twitter: {
-            card: "summary_large_image",
+            card: "summary",
             title,
             description,
         },

@@ -55,7 +55,7 @@ export async function generateMetadata(props: {
             url: `/${locale}/guide`,
             locale,
         },
-        twitter: { card: "summary_large_image", title, description },
+        twitter: { card: "summary", title, description },
     };
 }
 

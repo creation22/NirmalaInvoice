@@ -24,6 +24,7 @@ export const BASE_URL = (
 export const AUTHOR_NAME = "Srajan Gupta";
 export const AUTHOR_WEBSITE = "https://x.com/_creation22";
 export const AUTHOR_SOCIAL = "https://x.com/_creation22";
+export const HIRE_ME_URL = "https://heysrajan.com";
 
 /**
  * API endpoints
